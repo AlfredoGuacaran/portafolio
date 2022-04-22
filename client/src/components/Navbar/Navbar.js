@@ -3,10 +3,10 @@ import { AppBar, Toolbar, Avatar, Typography, Button } from '@material-ui/core';
 import useStyles from './styles';
 import fotoPerfil from '../../images/fotoperfil.jpg';
 
-function Navbar() {
+const Navbar = () => {
   const clasess = useStyles();
   return (
-    <AppBar fullwidth='true' position='static' className={clasess.navbar}>
+    <AppBar elevation={2} fullwidth='true' position='static' className={clasess.navbar}>
       <div className={clasess.profileContainer}>
         <Avatar alt='Foto Alfredo' src={fotoPerfil} className={clasess.fotoPerfil} />
         <Typography className={`${clasess.name} ${clasess.typo}`}>Alfredo Guacaran</Typography>
@@ -19,6 +19,6 @@ function Navbar() {
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 export default Navbar;

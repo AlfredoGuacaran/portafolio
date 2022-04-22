@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   navbar: {
-    boxShadow: 'none',
-    background: 'linear-gradient(279.56deg, rgba(127,191,255, 0.8) 13.79%, rgba(127,191,255, 0.6) 34.18%, rgba(127,191,255, 0.1) 50.02%)',
+    background: 'transparent',
     height: '80px',
     padding: '0 120px',
     display: 'flex',
@@ -20,10 +19,10 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     marginRight: '20px',
   },
   typo: {
-    color: '#353535 !important',
-    fontFamily: 'helvetica !important',
-    fontWeight: 'bold !important',
-    fontSize: '18px !important',
+    color: '#353535 ',
+    fontFamily: 'helvetica ',
+    fontWeight: 'bold ',
+    fontSize: '18px ',
     textTransform: 'none',
     letterSpacing: '2px',
   },
