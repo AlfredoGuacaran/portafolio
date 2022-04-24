@@ -1,4 +1,5 @@
-import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
+import { makeStyles } from '@material-ui/core/styles';
+export default makeStyles((theme) => ({
   scrollContainer: {
     height: '60px',
     width: '100%',
@@ -31,5 +32,14 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
       color: '#777777',
       whiteSpace: 'nowrap',
     },
+  },
+  h3: {
+    fontFamily: 'helvetica ',
+    fontWeight: 'bold ',
+    fontSize: '20px',
+    lineHeight: '24px',
+    textAlign: 'left',
+    color: '#353535',
+    marginLeft: '60px',
   },
 }));

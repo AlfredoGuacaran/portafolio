@@ -1,6 +1,6 @@
-import React, { useState } from 'react';import useStyles from './styles';
+import React, { useState } from 'react';
+import useStyles from './styles';
 import skillIcon from '../../images/javascript-39404.png';
-import { Container } from '@material-ui/core';
 import ScrollContainer from 'react-indiana-drag-scroll';
 const skills = [
   { name: 'Javascript Javascript 1', icon: skillIcon },
@@ -28,7 +28,8 @@ const Skills = () => {
     setScrollState((prevScrollState) => ({ ...prevScrollState, dragging: false }));
   };
   return (
-    <Container styles={{ dragging: scrollState.dragging }}>
+    <div styles={{ dragging: scrollState.dragging }}>
+      <h3 className={clasess.h3}>Competencias técnicas</h3>
       <ScrollContainer className={clasess.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
         {skills.slice(0, skills.length / 2).map((skill, index) => (
           <div key={index} className={clasess.skill}>
@@ -45,7 +46,7 @@ const Skills = () => {
           </div>
         ))}
       </ScrollContainer>
-    </Container>
+    </div>
   );
 };
 

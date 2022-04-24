@@ -1,26 +1,16 @@
-import React from 'react';import { Container, Grow, Grid } from '@material-ui/core';
+import React from 'react';import { Slide } from '@material-ui/core';
 import Heading from '../../components/Heading/Heading';
 import Skills from '../../components/Skills/Skills';
+import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
+
 export default function Home() {
   return (
-    <Grow in>
-      <Container maxwidth='xl'>
-        <Grid container>
-          <Heading />
-          <Grid item xs={12}>
-            <Skills />
-          </Grid>
-          <Grid item xs={12}>
-            PROYECTOS SECCION
-          </Grid>
-          <Grid item xs={12}>
-            CONTACTO
-          </Grid>
-          <Grid item xs={12}>
-            CONTACTO
-          </Grid>
-        </Grid>
-      </Container>
-    </Grow>
+    <Slide direction='right' in mountOnEnter unmountOnExit>
+      <div>
+        <Heading />
+        <Skills />
+        <ProjectsSection />
+      </div>
+    </Slide>
   );
 }
