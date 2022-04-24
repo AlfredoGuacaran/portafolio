@@ -1,12 +1,16 @@
 import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   navbar: {
     background: 'transparent',
-    height: '80px',
+    backdropFilter: 'blur(6px)',
+    height: '60px',
     padding: '0 120px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 30px',
+    },
   },
 
   profileContainer: {
@@ -14,8 +18,8 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     alignItems: 'center',
   },
   fotoPerfil: {
-    height: '65px',
-    width: '65px',
+    height: '50px',
+    width: '50px',
     marginRight: '20px',
   },
   typo: {
@@ -30,5 +34,16 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     background: 'white',
     marginLeft: '30px',
     borderRadius: '12px',
+  },
+  menu: {
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+  },
+  btns: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
 }));

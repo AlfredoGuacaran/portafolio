@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Grow, Grid } from '@material-ui/core';
+import React from 'react';import { Container, Grow, Grid } from '@material-ui/core';
 import Heading from '../../components/Heading/Heading';
+import Skills from '../../components/Skills/Skills';
 export default function Home() {
   return (
     <Grow in>
@@ -8,10 +8,13 @@ export default function Home() {
         <Grid container>
           <Heading />
           <Grid item xs={12}>
-            SKILL SECCION
+            <Skills />
           </Grid>
           <Grid item xs={12}>
             PROYECTOS SECCION
+          </Grid>
+          <Grid item xs={12}>
+            CONTACTO
           </Grid>
           <Grid item xs={12}>
             CONTACTO
