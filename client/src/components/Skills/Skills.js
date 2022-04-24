@@ -1,8 +1,7 @@
-import React from 'react';
-import HorizontalScroll from 'react-scroll-horizontal';
+import React from 'react';import HorizontalScroll from 'react-scroll-horizontal';
 import useStyles from './styles';
 import skillIcon from '../../images/javascript-39404.png';
-import { Container, Typography } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 
 const ScrollingHorizontally = () => {
   const clasess = useStyles();
