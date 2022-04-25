@@ -3,13 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     background: 'transparent',
     backdropFilter: 'blur(6px)',
     height: '60px',
-    padding: '0 120px',
+    padding: '0 40px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
-      padding: '0 30px',
+      padding: '0 20px',
     },
   },
 

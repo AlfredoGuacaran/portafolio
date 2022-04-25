@@ -11,16 +11,25 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     borderRadius: '100px',
     border: '2px solid rgba(240, 240, 240, 1)',
     margin: '0 15px',
-    padding: '0 15px',
+    padding: '0 20px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     userSelect: 'none',
     cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      height: '40px',
+      margin: '0 5px',
+      padding: '0 10px',
+    },
 
     '& > img': {
       width: '22px',
       height: '22px',
+      [theme.breakpoints.down('sm')]: {
+        width: '18px',
+        height: '18px',
+      },
     },
     '& > span': {
       marginLeft: '18px',
@@ -30,6 +39,9 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
       lineHeight: '21px',
       color: '#777777',
       whiteSpace: 'nowrap',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '16px',
+      },
     },
   },
   h3: {
@@ -39,6 +51,5 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     lineHeight: '24px',
     textAlign: 'left',
     color: '#353535',
-    marginLeft: '20px',
   },
 }));

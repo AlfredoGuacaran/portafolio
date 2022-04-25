@@ -1,4 +1,6 @@
-import React, { useState } from 'react';import useStyles from './styles';
+import React, { useState } from 'react';
+import useStyles from './styles';
+import { Container } from '@material-ui/core';
 import skillIcon from '../../images/javascript-39404.png';
 import ScrollContainer from 'react-indiana-drag-scroll';
 const skills = [
@@ -27,25 +29,30 @@ const Skills = () => {
     setScrollState((prevScrollState) => ({ ...prevScrollState, dragging: false }));
   };
   return (
-    <div styles={{ dragging: scrollState.dragging }}>
-      <h3 className={classes.h3}>Competencias técnicas</h3>
-      <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-        {skills.slice(0, skills.length / 2).map((skill, index) => (
-          <div key={index} className={classes.skill}>
-            <img src={skill.icon} alt='icon'></img>
-            <span>{skill.name}</span>
-          </div>
-        ))}
-      </ScrollContainer>
-      <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-        {skills.slice(-1 * (skills.length / 2 + 1)).map((skill, index) => (
-          <div key={index} className={classes.skill}>
-            <img src={skill.icon} alt='icon'></img>
-            <span>{skill.name}</span>
-          </div>
-        ))}
-      </ScrollContainer>
-    </div>
+    <>
+      <Container>
+        <h3 className={classes.h3}>Competencias técnicas</h3>
+      </Container>
+
+      <div styles={{ dragging: scrollState.dragging }}>
+        <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
+          {skills.slice(0, skills.length / 2).map((skill, index) => (
+            <div key={index} className={classes.skill}>
+              <img src={skill.icon} alt='icon'></img>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </ScrollContainer>
+        <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
+          {skills.slice(-1 * (skills.length / 2 + 1)).map((skill, index) => (
+            <div key={index} className={classes.skill}>
+              <img src={skill.icon} alt='icon'></img>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </ScrollContainer>
+      </div>
+    </>
   );
 };
 

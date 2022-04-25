@@ -19,7 +19,7 @@ const ContactForm = () => {
             <TextField className={classes.inputs} name='nombre' label='Nombre' variant='filled'></TextField>
             <TextField className={classes.inputs} name='email' label='Email' variant='filled'></TextField>
           </div>
-          <TextField className={classes.textArea} aria-label='minimum height' multiline minRows={3} placeholder='Cuéntame la razón por la que me quieres contactar' variant='filled'></TextField>
+          <TextField className={classes.textArea} multiline minRows={3} placeholder='Mensaje' variant='filled'></TextField>
           <Button variant='contained' size='large' type='submit'>
             Envíar
           </Button>
