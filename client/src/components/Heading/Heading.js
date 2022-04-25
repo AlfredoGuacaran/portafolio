@@ -1,21 +1,20 @@
-import React from 'react';
-import { Container, Typography, Avatar } from '@material-ui/core';
+import React from 'react';import { Container, Typography } from '@material-ui/core';
 import useStyles from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
-import fotoPerfil from '../../images/fotoperfil.jpg';
+import Svg from '../../images/undraw_developer_activity_re_39tg.svg';
 
 const Heading = () => {
-  const clasess = useStyles();
+  const classes = useStyles();
   return (
-    <Container className={clasess.headingContainer}>
-      <div className={clasess.textContainer}>
+    <Container className={classes.headingContainer}>
+      <div className={classes.textContainer}>
         <Typography variant='h4'>Hola, Soy Alfredo</Typography>
         <Typography variant='h1'>Desarrollo Fullstack con Javascript</Typography>
         <Typography variant='body1'>
           Bienvenid@ a mi portafolio, aquí encontraras más información sobre mí, los proyectos que tengo para mostrarte, las tecnologias de uso y como contactarte conmigo.
         </Typography>
-        <div className={clasess.iconsContainer}>
+        <div className={classes.iconsContainer}>
           <a href='https://github.com/AlfredoGuacaran' target='_blank' rel='noopener noreferrer'>
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -27,7 +26,7 @@ const Heading = () => {
           </a>
         </div>
       </div>
-      <Avatar alt='Foto Alfredo' src={fotoPerfil} className={clasess.fotoPerfil} />
+      <img className={classes.svgImg} src={Svg} alt='DevSvg'></img>
     </Container>
   );
 };

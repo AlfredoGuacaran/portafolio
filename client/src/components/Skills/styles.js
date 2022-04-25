@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-export default makeStyles((theme) => ({
+import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   scrollContainer: {
     height: '60px',
     width: '100%',
@@ -40,6 +39,6 @@ export default makeStyles((theme) => ({
     lineHeight: '24px',
     textAlign: 'left',
     color: '#353535',
-    marginLeft: '60px',
+    marginLeft: '20px',
   },
 }));

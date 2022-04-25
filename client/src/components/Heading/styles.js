@@ -6,6 +6,16 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     justifyContent: 'space-between',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
+      height: 'calc(80vh)',
+      padding: '20px',
+    },
+  },
+
+  svgImg: {
+    width: '40%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '40%',
     },
   },
   textContainer: {

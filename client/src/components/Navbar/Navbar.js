@@ -1,25 +1,24 @@
-import React from 'react';
-import { AppBar, Toolbar, Avatar, Typography, Button } from '@material-ui/core';
+import React from 'react';import { AppBar, Toolbar, Avatar, Typography, Button } from '@material-ui/core';
 import useStyles from './styles';
 import fotoPerfil from '../../images/fotoperfil.jpg';
 import Menu from './Menu';
 
 const Navbar = () => {
-  const clasess = useStyles();
+  const classes = useStyles();
   return (
-    <AppBar position='sticky' elevation={2} fullwidth='true' className={clasess.navbar}>
-      <div className={clasess.profileContainer}>
-        <Avatar alt='Foto Alfredo' src={fotoPerfil} className={clasess.fotoPerfil} />
-        <Typography className={`${clasess.name} ${clasess.typo}`}>Alfredo Guacaran</Typography>
+    <AppBar position='sticky' elevation={2} fullwidth='true' className={classes.navbar}>
+      <div className={classes.profileContainer}>
+        <Avatar alt='Foto Alfredo' src={fotoPerfil} className={classes.fotoPerfil} />
+        <Typography className={`${classes.name} ${classes.typo}`}>Alfredo Guacaran</Typography>
       </div>
       <Toolbar>
-        <div className={clasess.btns}>
-          <Button className={`${clasess.btnLink} ${clasess.typo}`}>{` Proyectos </>`}</Button>
-          <Button variant='contained' className={`${clasess.btnBgW} ${clasess.typo}`}>
+        <div className={classes.btns}>
+          <Button className={`${classes.btnLink} ${classes.typo}`}>{` Proyectos </>`}</Button>
+          <Button variant='contained' className={`${classes.btnBgW} ${classes.typo}`}>
             Contactame
           </Button>
         </div>
-        <div className={clasess.menu}>
+        <div className={classes.menu}>
           <Menu />
         </div>
       </Toolbar>
