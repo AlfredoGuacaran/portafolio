@@ -2,8 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   footer: {
     background: '#232220',
-    marginTop: '15px',
-
+    margin: '15px 0 0 0;',
     padding: '10px 40px',
     display: 'flex',
     flexDirection: 'row',

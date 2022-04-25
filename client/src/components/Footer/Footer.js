@@ -1,4 +1,5 @@
-import React from 'react';import { AppBar, Toolbar, Avatar, Typography, Button } from '@material-ui/core';
+import React from 'react';
+import { AppBar, Toolbar, Avatar } from '@material-ui/core';
 import useStyles from './styles';
 import fotoPerfil from '../../images/fotoperfil.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
