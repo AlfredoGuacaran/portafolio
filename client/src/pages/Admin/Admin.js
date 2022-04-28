@@ -1,13 +1,17 @@
-import React from 'react';import { Slide } from '@material-ui/core';
+import React from 'react';
+import { Slide } from '@material-ui/core';
 import ProjectsSection from '../../components/ProjectsSection/ProjectsSection';
 import SkillsForm from '../../components/SkillsForm/SkillsForm';
+import { Container } from '@material-ui/core';
+import useStyles from './styles';
 
 export default function Admin() {
+  const classes = useStyles();
   return (
     <Slide direction='right' in mountOnEnter unmountOnExit>
-      <div>
+      <Container className={classes.container}>
         <SkillsForm />
-      </div>
+      </Container>
     </Slide>
   );
 }

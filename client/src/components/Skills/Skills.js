@@ -1,7 +1,8 @@
 import React, { useState } from 'react';import useStyles from './styles';
-import { Container } from '@material-ui/core';
+import { Container, Typography, Slider } from '@material-ui/core';
 import skillIcon from '../../images/javascript-39404.png';
 import ScrollContainer from 'react-indiana-drag-scroll';
+import Skill from './Skill';
 const skills = [
   { name: 'Javascript Javascript 1', icon: skillIcon },
   { name: 'Javascript 2', icon: skillIcon },
@@ -36,18 +37,12 @@ const Skills = () => {
       <div styles={{ dragging: scrollState.dragging }}>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
           {skills.slice(0, skills.length / 2).map((skill, index) => (
-            <div key={index} className={classes.skill}>
-              <img src={skill.icon} alt='icon'></img>
-              <span>{skill.name}</span>
-            </div>
+            <Skill key={index} skill={{ name: skill.name, skillIcon }} />
           ))}
         </ScrollContainer>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
           {skills.slice(-1 * (skills.length / 2 + 1)).map((skill, index) => (
-            <div key={index} className={classes.skill}>
-              <img src={skill.icon} alt='icon'></img>
-              <span>{skill.name}</span>
-            </div>
+            <Skill key={index} skill={{ name: skill.name, skillIcon }} />
           ))}
         </ScrollContainer>
       </div>

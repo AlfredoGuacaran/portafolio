@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-export default makeStyles((theme) => ({
+import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       width: '100%',
@@ -25,6 +24,7 @@ export default makeStyles((theme) => ({
   },
   buttonsContainer: {
     display: 'flex',
+    justifyContent: 'space-around',
     gap: '5px',
   },
 }));
