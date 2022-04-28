@@ -1,7 +1,9 @@
 import { CREATE } from '../constants/actionTypes';import * as api from '../api';
 export const createSkill = (skill) => async (dispatch) => {
   try {
-    dispatch({ type: CREATE, payload: skill });
+    const { data } = await api.createSkill(skill);
+    console.log(data);
+    dispatch({ type: CREATE, payload: data });
   } catch (error) {
     console.log(error);
   }

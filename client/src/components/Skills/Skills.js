@@ -1,5 +1,6 @@
-import React, { useState } from 'react';import useStyles from './styles';
-import { Container, Typography, Slider } from '@material-ui/core';
+import React, { useState } from 'react';
+import useStyles from './styles';
+import { Container } from '@material-ui/core';
 import skillIcon from '../../images/javascript-39404.png';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Skill from './Skill';

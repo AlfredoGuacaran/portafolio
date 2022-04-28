@@ -1,12 +1,11 @@
-import React from 'react';
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import React from 'react';import { MuiThemeProvider } from '@material-ui/core/styles';
 import { theme } from './styles';
 import Home from './pages/Home/Home';
 import Admin from './pages/Admin/Admin';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import makeStyles from './styles';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const classes = makeStyles();

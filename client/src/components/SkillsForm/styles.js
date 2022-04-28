@@ -17,7 +17,8 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
   },
   from: {},
   textFile: {},
-  typo: { flex: '0 0 100%', textAlign: 'center', margin: '5px 0' },
+  title: { flex: '0 0 100%', textAlign: 'center', margin: '5px 0' },
+  label: { fontSize: '14px' },
   fileContainer: {
     width: '97%',
     margin: '10px 0',
