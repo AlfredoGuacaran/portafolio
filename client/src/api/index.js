@@ -1,5 +1,6 @@
-import axios from 'axios';
-import { LOCALAPI } from '../constants/actionTypes';
+import axios from 'axios';import { LOCALAPI, CLOUDAPI } from '../constants/actionTypes';
 const API = axios.create({ baseURL: LOCALAPI });
 export const createSkill = (newSkill) => API.post('/skills', newSkill);
 export const getSkills = () => API.get('/skills');
+export const deleteSkill = (_id) => API.delete(`/skills/${_id}`);
+export const updateSkill = (newSkillData) => API.patch('/skills', newSkillData);

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   scrollContainer: {
-    height: '60px',
+    height: '80px',
     width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
@@ -51,5 +51,8 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     lineHeight: '24px',
     textAlign: 'left',
     color: '#353535',
+  },
+  selected: {
+    border: '2px solid rgba(127, 191, 255, 0.8)',
   },
 }));

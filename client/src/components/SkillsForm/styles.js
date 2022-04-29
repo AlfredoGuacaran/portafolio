@@ -4,6 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
       width: '100%',
     },
   },
+  preview: {
+    height: '60px',
+  },
   paper: {
     width: 'fit-content',
     display: 'flex',
@@ -12,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';export default makeStyles(
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'space-around',
-    padding: '5px',
+    padding: '10px',
     borderRadius: '8px',
   },
   from: {},
