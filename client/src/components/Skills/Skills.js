@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
 import { Container } from '@material-ui/core';
 import skillIcon from '../../images/javascript-39404.png';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Skill from './Skill';
-const skills = [
+import { useSelector, useDispatch } from 'react-redux';
+import { getSkills } from '../../actions/skills';
+
+const fakeskills = [
   { name: 'Javascript Javascript 1', icon: skillIcon },
   { name: 'Javascript 2', icon: skillIcon },
   { name: 'Javascript 3', icon: skillIcon },
@@ -22,13 +25,19 @@ const skills = [
 
 const Skills = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const skills = useSelector((state) => state.skills.skills);
   const [scrollState, setScrollState] = useState({ hiddenSkill: [], dragging: false });
-  const onStartScroll = (event) => {
+  const onStartScroll = () => {
     setScrollState((prevScrollState) => ({ ...prevScrollState, dragging: false }));
   };
-  const onEndScroll = (event) => {
+  const onEndScroll = () => {
     setScrollState((prevScrollState) => ({ ...prevScrollState, dragging: false }));
   };
+
+  useEffect(() => {
+    dispatch(getSkills());
+  }, [dispatch]);
   return (
     <>
       <Container>
@@ -37,13 +46,13 @@ const Skills = () => {
 
       <div styles={{ dragging: scrollState.dragging }}>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-          {skills.slice(0, skills.length / 2).map((skill, index) => (
-            <Skill key={index} skill={{ name: skill.name, skillIcon }} />
+          {skills.slice(0, fakeskills.length / 2).map(({ _id, name, skillIcon }) => (
+            <Skill key={_id} skill={{ name, skillIcon }} />
           ))}
         </ScrollContainer>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-          {skills.slice(-1 * (skills.length / 2 + 1)).map((skill, index) => (
-            <Skill key={index} skill={{ name: skill.name, skillIcon }} />
+          {skills.slice(-1 * (fakeskills.length / 2 + 1)).map(({ _id, name, skillIcon }) => (
+            <Skill key={_id} skill={{ name, skillIcon }} />
           ))}
         </ScrollContainer>
       </div>

@@ -1,7 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import { createSkill } from '../controllers/skills.js';
+import { createSkill, getSkills } from '../controllers/skills.js';
 
-router.post('/skills', createSkill);
+router.post('/', createSkill);
+router.get('/', getSkills);
 
 export default router;

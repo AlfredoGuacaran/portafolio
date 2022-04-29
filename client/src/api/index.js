@@ -1,3 +1,5 @@
-import axios from 'axios';const API = axios.create({ baseURL: 'http://localhost:5000/' });
-
-export const createSkill = (newSkill) => API.post('/admin/skills', newSkill);
+import axios from 'axios';
+import { LOCALAPI } from '../constants/actionTypes';
+const API = axios.create({ baseURL: LOCALAPI });
+export const createSkill = (newSkill) => API.post('/skills', newSkill);
+export const getSkills = () => API.get('/skills');

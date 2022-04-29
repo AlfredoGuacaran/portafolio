@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { Paper, TextField, Button, Typography, Slider } from '@material-ui/core';
+import React, { useState } from 'react';import { Paper, TextField, Button, Typography, Slider, CircularProgress } from '@material-ui/core';
+import Alert from '@material-ui/lab/Alert';
 import FileBase from 'react-file-base64';
 import useStyles from './styles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import SkillPreview from '../Skills/Skill';
 import { createSkill } from '../../actions/skills';
 
 const SkillsForm = () => {
   const dispatch = useDispatch();
+  const { loadingStatus } = useSelector((state) => state.skills);
   const classes = useStyles();
   const [skillData, setSkillData] = useState({ name: '', skillIcon: '', ranking: 50 });
   const handleSubmit = (e) => {
@@ -60,7 +61,8 @@ const SkillsForm = () => {
         </div>
       </form>
       <div className={classes.preview}>
-        <SkillPreview skill={skillData} />
+        {loadingStatus === 'noLoding' && <SkillPreview skill={skillData} />}
+        {loadingStatus === 'loding' && <CircularProgress />}
       </div>
     </Paper>
   );
