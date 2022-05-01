@@ -22,13 +22,11 @@ const Skill = ({ skill }) => {
     dispatch(setCurrentSkill({ _id }));
   };
 
-  return name.length ? (
+  return (
     <div className={`${classes.skill} ${isSelected && classes.selected}`} onClick={handleClick}>
       <img src={skillIcon} alt='icon'></img>
       <span>{name}</span>
     </div>
-  ) : (
-    'PREVIEW'
   );
 };
 
