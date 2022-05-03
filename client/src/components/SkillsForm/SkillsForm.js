@@ -92,7 +92,7 @@ const SkillsForm = () => {
         </div>
       </form>
       <div className={classes.preview}>
-        {!loadState.loading && <SkillPreview skill={skillData} />}
+        {!loadState.loading && skillData.name.length ? <SkillPreview skill={skillData} /> : 'PREVIEW'}
         {loadState.loading && <CircularProgress />}
       </div>
       {loadState.endLoading && (

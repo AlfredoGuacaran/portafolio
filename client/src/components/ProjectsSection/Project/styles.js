@@ -3,6 +3,7 @@ export default makeStyles((theme) => ({
   card: {
     width: '100%',
     borderRadius: '14px 14px 0px 0px',
+    background: '#F5F5F5',
   },
   media: {
     height: '140px',

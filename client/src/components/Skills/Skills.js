@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';import useStyles from './styles';
-import { Container } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import useStyles from './styles';
+import { Container, CircularProgress } from '@material-ui/core';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import Skill from './Skill';
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,10 +29,10 @@ const Skills = () => {
 
       <div styles={{ dragging: scrollState.dragging }}>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-          {skills.length && skills.slice(0, skills.length / 2).map(({ _id, name, skillIcon }) => <Skill key={_id} skill={{ _id, name, skillIcon }} />)}
+          {skills.length ? skills.slice(0, skills.length / 2).map(({ _id, name, skillIcon }) => <Skill key={_id} skill={{ _id, name, skillIcon }} />) : <CircularProgress />}
         </ScrollContainer>
         <ScrollContainer className={classes.scrollContainer} onStartScroll={onStartScroll} onEndScroll={onEndScroll}>
-          {skills.length && skills.slice(-skills.length / 2).map(({ _id, name, skillIcon }) => <Skill key={_id} skill={{ _id, name, skillIcon }} />)}
+          {skills.length ? skills.slice(-skills.length / 2).map(({ _id, name, skillIcon }) => <Skill key={_id} skill={{ _id, name, skillIcon }} />) : <CircularProgress />}
         </ScrollContainer>
       </div>
     </>

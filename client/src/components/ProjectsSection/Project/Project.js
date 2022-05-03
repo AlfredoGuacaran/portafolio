@@ -1,33 +1,41 @@
-import React from 'react';import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import React from 'react';
+import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import useStyles from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { setCurrentProject } from '../../../actions/projects';
 
 const Project = (props) => {
-  const { title, subTitle, projectPreview, id } = props.project;
+  const { _id, title, description, img, tags, githubLink, liveLink } = props.project;
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(setCurrentProject({ _id }));
+  };
+
   return (
-    <Card id={id} elevation={0} className={classes.card}>
+    <Card onClick={handleClick} elevation={0} className={classes.card}>
       <CardActionArea>
-        <CardMedia className={classes.media} image={projectPreview} />
+        <CardMedia className={classes.media} image={img} />
         <CardContent>
           <Typography className={classes.typo} gutterBottom variant='h5' component='h5'>
             {title}
           </Typography>
           <Typography gutterBottom variant='subtitle2'>
-            #Html #React #Node #Javascript
+            {tags}
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            {subTitle}
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardActions}>
-        <Button className={classes.actions} href='https://github.com/AlfredoGuacaran' target='_blank' rel='noopener noreferrer' size='small' color='primary'>
+        <Button className={classes.actions} href={githubLink} target='_blank' rel='noopener noreferrer' size='small' color='primary'>
           <FontAwesomeIcon icon={faGithub} />
         </Button>
-        <Button className={classes.actions} href='https://github.com/AlfredoGuacaran' target='_blank' rel='noopener noreferrer' size='small' color='primary'>
+        <Button className={classes.actions} href={liveLink} target='_blank' rel='noopener noreferrer' size='small' color='primary'>
           <FontAwesomeIcon icon={faSquareArrowUpRight} />
         </Button>
       </CardActions>

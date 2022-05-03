@@ -1,8 +1,10 @@
-import express from 'express';import bodyParser from 'body-parser';
+import express from 'express';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import skillRoutes from './routes/skills.js';
+import projectRoutes from './routes/projects.js';
 
 const app = express();
 dotenv.config();
@@ -13,6 +15,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 
 app.use('/skills', skillRoutes);
+app.use('/projects', projectRoutes);
 
 //definicion del puerto
 const PORT = process.env.PORT || 5000;

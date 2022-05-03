@@ -1,9 +1,9 @@
-import express from 'express';import mongoose from 'mongoose';
+import express from 'express';
+import mongoose from 'mongoose';
 import SkillModel from '../models/skills.js';
 
 export const createSkill = async (req, res) => {
   try {
-    console.log('Aqui');
     const skill = req.body;
     const newSkill = new SkillModel(skill);
     await newSkill.save();
