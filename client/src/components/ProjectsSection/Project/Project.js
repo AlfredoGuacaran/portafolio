@@ -33,9 +33,11 @@ const Project = (props) => {
       </CardActionArea>
       <CardActions className={classes.cardActions}>
         <Button className={classes.actions} href={githubLink} target='_blank' rel='noopener noreferrer' size='small' color='primary'>
+          <span className={classes.btnText}>Ver código</span>
           <FontAwesomeIcon icon={faGithub} />
         </Button>
         <Button className={classes.actions} href={liveLink} target='_blank' rel='noopener noreferrer' size='small' color='primary'>
+          <span className={classes.btnText}>Ver live</span>
           <FontAwesomeIcon icon={faSquareArrowUpRight} />
         </Button>
       </CardActions>

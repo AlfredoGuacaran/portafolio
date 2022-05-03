@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';import { Grid, Container, CircularProgress } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import { Grid, Container, CircularProgress, Button } from '@material-ui/core';
 import Project from './Project/Project';
 import useStyles from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProjects } from '../../actions/projects';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const ProjectsSection = () => {
   const classes = useStyles();
@@ -27,6 +30,13 @@ const ProjectsSection = () => {
         ) : (
           <CircularProgress />
         )}
+
+        <Grid item key={'25516'} xs={12} sm={6} md={4}>
+          <Button className={classes.verMasContainer} href={'https://github.com/AlfredoGuacaran'} target='_blank' rel='noopener noreferrer' size='small' color='primary'>
+            <span className={classes.vermas}>Ver más proyectos</span>
+            <FontAwesomeIcon className={classes.vermasIcon} icon={faGithub} />
+          </Button>
+        </Grid>
       </Grid>
     </Container>
   );

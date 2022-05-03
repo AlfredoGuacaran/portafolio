@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
-export default makeStyles((theme) => ({
+import { makeStyles } from '@material-ui/core/styles';export default makeStyles((theme) => ({
   card: {
     width: '100%',
     borderRadius: '14px 14px 0px 0px',
@@ -35,5 +34,9 @@ export default makeStyles((theme) => ({
     '&:active': {
       transform: 'scale(0.95)',
     },
+  },
+  btnText: {
+    fontSize: '10px',
+    marginRight: '3px',
   },
 }));
